@@ -8,7 +8,7 @@ const totalImages = 63;
 for (let i = 1; i <= totalImages; i++) {
   const num = String(i).padStart(2, '0');
   const img = document.createElement('img');
-  img.src = `webp/replica-${num}.webp`;   // ✅ JPG → WEBP로 변경
+  img.src = `WebP/replica-${num}.webp`;   // ✅ JPG → WEBP로 변경
   img.draggable = false;
   gallery.appendChild(img);
 }
