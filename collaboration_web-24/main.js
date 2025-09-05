@@ -13,7 +13,7 @@ function preloadPage(pageNum) {
   if (pageNum < 1 || pageNum > totalPages) return;
   if (!pageCache[pageNum]) {
     const img = new Image();
-    img.src = `WebP/collaboration(24)-${String(pageNum).padStart(2,"0")}.webp`;
+    img.src = `WebP/collaboration-${String(pageNum).padStart(2,"0")}.webp`;
     pageCache[pageNum] = img;
   }
 }
