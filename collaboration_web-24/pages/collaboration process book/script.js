@@ -132,6 +132,6 @@ if (processBtn) {
 const bottomRightBtn = document.getElementById("bottomRightBtn");
 if (bottomRightBtn) {
   bottomRightBtn.addEventListener("click", () => {
-    window.location.href = "../../../replica_web(24)/index.html";
+    window.location.href = "../../../replica_web-24/index.html";
   });
 }

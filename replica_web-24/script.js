@@ -141,10 +141,10 @@ renderCursor();
 // 버튼 클릭 이동
 // ===============================
 document.getElementById('replicaBtn').addEventListener('click', ()=>{
-  window.location.href = "../collaboration_web(24)/index.html";
+  window.location.href = "../collaboration_web-24/index.html";
 });
 
 document.getElementById('processBtn').addEventListener('click', ()=>{
   // 갤러리 → 프로세스북
-  window.location.href = "./pages/replica%20process%20book/index.html";
+  window.location.href = "./pages/replica process book/index.html";
 });
