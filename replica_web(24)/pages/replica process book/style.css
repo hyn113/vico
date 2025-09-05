@@ -1,0 +1,190 @@
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background: #000;
+  font-family: 'Manrope', sans-serif;
+  cursor: none;  /* ✅ 기본 커서 숨김 */
+  overflow: hidden;
+}
+
+/* ✅ 손모양 커서 제거 */
+a, button {
+  cursor: none !important;
+}
+
+:root {
+  --corner-gap: 25px;
+  --sidebar-width: 220px;
+  --svg-right-gap: 40px;
+}
+
+/* -----------------
+   Viewer
+----------------- */
+.viewer {
+  width: calc(100% - var(--sidebar-width));
+  height: 100%;
+  margin-left: var(--sidebar-width);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 50;
+}
+
+.svg-wrapper {
+  position: relative;
+  max-width: 80vw;
+  max-height: 85vh;
+  display: flex;
+  justify-content: flex-end;  /* ✅ 오른쪽 끝으로 정렬 */
+  align-items: center;
+  perspective: 900px;
+  z-index: 50;
+}
+
+.svg-container {
+  margin-right: 40px;  /* ✅ 항상 40px 고정 */
+  transform-origin: center center;
+  transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  will-change: transform;
+  position: relative;
+  z-index: 50;
+}
+
+.svg-container svg {
+  display: block;
+  max-width: 100%;   /* ✅ 부모(.svg-wrapper) 기준으로 반응형 */
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+/* hover 시 눌림 효과 */
+.svg-wrapper:hover .svg-container {
+  transform: scale(0.98);
+}
+
+/* -----------------
+   Sidebar
+----------------- */
+.sidebar {
+  position: absolute;
+  left: var(--corner-gap);
+  bottom: var(--corner-gap);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  z-index: 60;
+}
+
+.site-title {
+  position: fixed;
+  top: var(--corner-gap);
+  left: var(--corner-gap);
+  font-size: 14px;
+  font-weight: 400;
+  mix-blend-mode: difference;
+  color: #fff;
+  z-index: 60;
+}
+
+.page-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-height: 70vh;
+  overflow-y: auto;
+  z-index: 60;
+}
+.page-list::-webkit-scrollbar { display: none; }
+
+.page-list a {
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  mix-blend-mode: difference;
+  color: #fff;
+  opacity: 0.6;
+  transition: opacity 0.3s ease, font-weight 0.3s ease;
+}
+.page-list a.active { font-weight: 600; opacity: 1; }
+.page-list a:hover { font-weight: 600; opacity: 1; }
+
+/* -----------------
+   Corners
+----------------- */
+.corner {
+  position: absolute;
+  z-index: 110;
+  mix-blend-mode: difference;
+  color: #fff;
+  font-size: 14px;
+}
+.top-right    { top: var(--corner-gap); right: var(--corner-gap); }
+.bottom-right { bottom: var(--corner-gap); right: var(--corner-gap); }
+#processBtn, #bottomRightBtn {
+  overflow: hidden;
+  display: inline-block;
+  width: 140px;
+  height: 1.2em;
+  position: absolute;
+}
+
+/* corner 버튼 텍스트 애니메이션 */
+#processBtn .button-text,
+#processBtn .hover-text,
+#bottomRightBtn .button-text,
+#bottomRightBtn .hover-text {
+  display: block;
+  position: absolute;
+  right: 0;
+  line-height: 1.2em;
+  transition: transform 0.7s ease, opacity 0.7s ease;
+}
+
+/* 기본 상태 */
+#processBtn .hover-text,
+#bottomRightBtn .hover-text {
+  transform: translateY(100%);
+  opacity: 0;
+}
+#processBtn .button-text,
+#bottomRightBtn .button-text {
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+/* hover 시 교체 */
+#processBtn:hover .button-text,
+#bottomRightBtn:hover .button-text {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+#processBtn:hover .hover-text,
+#bottomRightBtn:hover .hover-text {
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+/* -----------------
+   Custom Cursor
+----------------- */
+.cursor-square {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  pointer-events: none;
+  z-index: 200; /* ✅ 최상단 */
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+  border: 1px solid #fff; /* ✅ 대비 강화 */
+}

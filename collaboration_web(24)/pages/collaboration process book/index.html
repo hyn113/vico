@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Collaboration Process Book</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 좌측 묶음 -->
+  <div class="sidebar">
+    <div class="site-title">Hhhh.archive</div>
+    <div class="page-list" id="pageList"></div>
+  </div>
+
+  <!-- 우상단 버튼 -->
+  <div class="corner top-right" id="processBtn">
+    <span class="button-text">Process book</span>
+    <span class="hover-text">Book</span>
+  </div>
+
+  <!-- 우하단 버튼 -->
+  <div class="corner bottom-right" id="bottomRightBtn">
+    <span class="button-text">Collaboration</span>
+    <span class="hover-text">Replica</span>
+  </div>
+
+  <!-- 메인 뷰어 -->
+  <main class="viewer">
+    <div class="svg-wrapper">
+      <div class="svg-container" id="svgContainer"></div>
+    </div>
+  </main>
+
+  <!-- 커스텀 커서 -->
+  <div class="cursor-square"></div>
+
+  <!-- ✅ worker.js 제거: 이제 script.js만 필요 -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Collaboration Viewer</title>
+  <link rel="stylesheet" href="main.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+
+  <!-- 모서리 글씨 -->
+  <div class="corner top-left">Hhhh.archive</div>
+
+  <!-- 우상단 버튼: Book -->
+  <div class="corner top-right" id="topRightBtn">
+    <span class="button-text">Book</span>
+    <span class="hover-text">Process book</span>
+  </div>
+
+  <!-- 우하단 버튼: Collaboration -->
+  <div class="corner bottom-right" id="bottomRightBtn">
+    <span class="button-text">Collaboration</span>
+    <span class="hover-text">Replica</span>
+  </div>
+
+  <!-- 중앙 WebP 뷰어 -->
+  <div id="bookContainer">
+    <img id="svgViewer" src="WebP/collaboration(24)-01.webp" alt="page" draggable="false">
+  </div>
+
+  <!-- 전체화면 페이지 뷰어 -->
+  <div class="fullscreen hidden">
+    <img id="fullscreen-img" src="" alt="" draggable="false">
+    <button class="back-button">&larr;</button>
+  </div>
+
+  <!-- 커스텀 사각형 커서 -->
+  <div class="cursor-square"></div>
+
+</body>
+</html>
