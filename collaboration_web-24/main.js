@@ -86,7 +86,7 @@ document.addEventListener("mousemove", (e) => {
 
 // Replica 버튼 → replica_web(24) 이동
 document.getElementById('bottomRightBtn').addEventListener('click', ()=>{
-  window.location.href = "../replica_web(24)/index.html";
+  window.location.href = "../replica_web-24/index.html";
 });
 
 // Book 버튼 → process book 페이지 이동
